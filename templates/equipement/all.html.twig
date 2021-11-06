@@ -12,7 +12,7 @@
         {% for equipement in equipements %}
         <tr>
             <td>
-                <a href= {{path('equipement_info', {nom:equipement.nom}) }} >{{equipement.nom}}</a>
+                <a href= {{path('equipement_info', {id:equipement.id}) }} >{{equipement.nom}}</a>
             </td>
             <td>
                 {{equipement.marque}}

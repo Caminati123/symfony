@@ -35,17 +35,17 @@ class EquipementController extends AbstractController
     }
 
     /**
-     * @Route("/equipement/{nom}", name="equipement_info")
+     * @Route("/equipement/{id}", name="equipement_info")
      */
-    public function info(string $nom): Response
+    public function info(int $id): Response
     {
         $equipement = $this->getDoctrine()
             ->getRepository(Equipement::class)
-            ->findOneBy(["nom"=>$nom]);
+            ->findOneBy(["id"=>$id]);
 
         if (!$equipement) {
             throw $this->createNotFoundException(
-                'No equipement found for : ' . $nom
+                'No equipement found for : ' . $id
             );
         }
 
